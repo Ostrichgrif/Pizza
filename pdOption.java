@@ -3,22 +3,17 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class FullMenu extends JFrame{
-
+public class pdOption extends JFrame {
     private JPanel mainPanel;
     private JLabel logoImage;
     private JButton profileButton;
     private JButton homeButton;
     private JButton menuButton;
     private JButton contactUsButton;
-    private JButton sidesButton;
-    private JButton pizzaButton;
-    private JButton beveragesButton;
-    private JTextArea sizeSMLTextArea;
-    private JTextPane breadSticks$4BreadStickBitesTextPane;
-    private JTextArea sizeSMLTextArea1;
+    private JButton Delivery;
+    private JButton pleaseChooseYourOptionButton;
 
-    public FullMenu(String name) {
+    public pdOption(String name) {
         super(name);
 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -36,13 +31,6 @@ public class FullMenu extends JFrame{
                 dispose();
             }
         });
-        sidesButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame sidesScreen = new Sides("Sides");
-                dispose();
-            }
-        });
         homeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -57,13 +45,12 @@ public class FullMenu extends JFrame{
                 dispose();
             }
         });
-        pizzaButton.addActionListener(new ActionListener() {
+        menuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame pizzaCreation = new PizzaCreator("Pizza Creator");
+                JFrame menu = new PizzaCreator("Full Menu");
                 dispose();
             }
         });
     }
-
 }

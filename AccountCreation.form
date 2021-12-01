@@ -191,7 +191,7 @@
           </component>
         </children>
       </grid>
-      <component id="786ea" class="javax.swing.JButton" default-binding="true">
+      <component id="786ea" class="javax.swing.JButton" binding="contactUsButton">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -213,7 +213,7 @@
           <text value="Home"/>
         </properties>
       </component>
-      <component id="4051e" class="javax.swing.JButton" binding="MenuButton">
+      <component id="4051e" class="javax.swing.JButton" binding="menuButton">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>

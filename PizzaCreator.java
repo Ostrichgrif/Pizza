@@ -84,7 +84,7 @@ public class PizzaCreator extends JFrame {
         profileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame accountCreation = new AccountCreation("Account Creator");
+                JFrame profilePage = new Profile("Profile");
                 dispose();
             }
         });
@@ -92,6 +92,27 @@ public class PizzaCreator extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame sidesScreen = new Sides("Sides");
+                dispose();
+            }
+        });
+        homeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame mainMenu = new Menu("Main Menu");
+                dispose();
+            }
+        });
+        contactUsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame contactUs = new Contact("Contact Us");
+                dispose();
+            }
+        });
+        menuButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame fullMenu = new FullMenu("Menu");
                 dispose();
             }
         });
@@ -177,7 +198,7 @@ public class PizzaCreator extends JFrame {
         checkOutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                userPizzaOrder.add(saveOrder(quantity));
+               // userPizzaOrder.add(saveOrder(quantity));
 
                 for (int i=0; i<userPizzaOrder.size(); i++) {
                     System.out.println(userPizzaOrder.get(i));
@@ -294,6 +315,9 @@ public class PizzaCreator extends JFrame {
             }
             else if (t3RightRButton.isSelected()) {
                 t3 = 3;
+            }
+            else {
+                t3=2;
             }
         }
         if (t4RButton.isSelected()) {

@@ -3,26 +3,22 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AccountCreation extends JFrame{
+public class PersonalInfo extends JFrame{
+    private JPanel mainPanel;
     private JLabel logoImage;
     private JButton profileButton;
     private JButton homeButton;
     private JButton menuButton;
-    private JPanel mainPanel;
-    private JTextField nameField;
-    private JTextField emailField;
-    private JTextField phoneField;
-    private JPasswordField passField2;
-    private JPasswordField passField;
-    private JTextField cardField;
-    private JTextField expField;
-    private JTextField cvvfield;
-    private JTextField addressField;
-    private JLabel errorField;
-    private JButton saveButton;
     private JButton contactUsButton;
+    private JFormattedTextField nameFormattedTextField;
+    private JFormattedTextField addressFormattedTextField;
+    private JFormattedTextField phoneFormattedTextField;
+    private JTextField textField1;
+    private JTextField textField2;
+    private JTextField textField3;
+    private JButton saveButton;
 
-    public AccountCreation(String name) {
+    public PersonalInfo(String name) {
         super(name);
 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -31,14 +27,6 @@ public class AccountCreation extends JFrame{
         this.setMinimumSize(new Dimension(1080, 720));
 
         this.pack();
-
-        saveButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                checkInformation();
-
-            }
-        });
 
         //Navigation
         homeButton.addActionListener(new ActionListener() {
@@ -69,31 +57,5 @@ public class AccountCreation extends JFrame{
                 dispose();
             }
         });
-
-    }
-    public void checkInformation() {
-        String tempString;
-        char[] tempPass;
-
-        errorField.setText("");
-
-        tempString = emailField.getText();
-        if (tempString.indexOf('@') == -1) {
-            errorField.setText("Invalid email address");
-        }
-
-        tempString = phoneField.getText();
-        if (tempString.length()>10 || tempString.length()<10) {
-            errorField.setText("Invalid phone number");
-        }
-
-
-    }
-    public void saveInformation() {
-
-    }
-
-    public static void main(String[] args) {
-        JFrame frame = new AccountCreation("Account Creation");
     }
 }

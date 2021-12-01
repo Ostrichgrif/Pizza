@@ -3,22 +3,18 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class FullMenu extends JFrame{
-
+public class Profile extends JFrame{
     private JPanel mainPanel;
     private JLabel logoImage;
     private JButton profileButton;
     private JButton homeButton;
     private JButton menuButton;
     private JButton contactUsButton;
-    private JButton sidesButton;
-    private JButton pizzaButton;
-    private JButton beveragesButton;
-    private JTextArea sizeSMLTextArea;
-    private JTextPane breadSticks$4BreadStickBitesTextPane;
-    private JTextArea sizeSMLTextArea1;
+    private JButton editProfileButton;
+    private JButton managePaymentMethodsButton;
+    private JButton transactionHistoryButton;
 
-    public FullMenu(String name) {
+    public Profile(String name) {
         super(name);
 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -29,20 +25,6 @@ public class FullMenu extends JFrame{
         this.pack();
 
         //Navigation
-        profileButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame profilePage = new Profile("Profile");
-                dispose();
-            }
-        });
-        sidesButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame sidesScreen = new Sides("Sides");
-                dispose();
-            }
-        });
         homeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -57,13 +39,19 @@ public class FullMenu extends JFrame{
                 dispose();
             }
         });
-        pizzaButton.addActionListener(new ActionListener() {
+        menuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame pizzaCreation = new PizzaCreator("Pizza Creator");
+                JFrame fullMenu = new FullMenu("Menu");
                 dispose();
             }
         });
-    }
+        editProfileButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame editPersonalInfo = new PersonalInfo("Edit Personal Information");
+            }
+        });
 
+    }
 }

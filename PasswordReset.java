@@ -3,17 +3,19 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Contact extends JFrame{
+public class PasswordReset extends JFrame{
+
+
     private JPanel mainPanel;
-    private JPanel Header;
     private JLabel logoImage;
-    private JButton profileButton;
     private JButton homeButton;
     private JButton menuButton;
     private JButton contactUsButton;
-    private JTextPane Message;
+    private JButton resetButton;
+    private JTextField textField1;
+    private JTextArea pleaseEnterEmailToTextArea;
 
-    public Contact(String name) {
+    public PasswordReset(String name) {
         super(name);
 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -45,13 +47,13 @@ public class Contact extends JFrame{
                 dispose();
             }
         });
-        profileButton.addActionListener(new ActionListener() {
+        resetButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame profilePage = new Profile("Profile");
+                JFrame profile = new Profile("Profile");
                 dispose();
             }
         });
     }
-
 }
+

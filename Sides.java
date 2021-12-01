@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Sides extends JFrame{
     private JPanel mainPanel;
@@ -45,5 +47,42 @@ public class Sides extends JFrame{
         this.setMinimumSize(new Dimension(1080, 720));
 
         this.pack();
+
+        //Navigation
+        profileButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame profilePage = new Profile("Profile");
+                dispose();
+            }
+        });
+        pizzaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame pizzaScreen = new PizzaCreator("Pizza Creator");
+                dispose();
+            }
+        });
+        homeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame mainMenu = new Menu("Main Menu");
+                dispose();
+            }
+        });
+        contactUsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame contactUs = new Contact("Contact Us");
+                dispose();
+            }
+        });
+        menuButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame fullMenu = new FullMenu("Menu");
+                dispose();
+            }
+        });
     }
 }
