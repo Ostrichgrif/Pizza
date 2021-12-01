@@ -191,17 +191,6 @@
           </component>
         </children>
       </grid>
-      <component id="786ea" class="javax.swing.JButton" binding="contactUsButton">
-        <constraints>
-          <grid row="2" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-7266521"/>
-          <font name="Arial Black" size="22" style="1"/>
-          <foreground color="-1"/>
-          <text value="Contact Us"/>
-        </properties>
-      </component>
       <component id="4a5cb" class="javax.swing.JButton" binding="homeButton" default-binding="true">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -213,7 +202,7 @@
           <text value="Home"/>
         </properties>
       </component>
-      <component id="4051e" class="javax.swing.JButton" binding="menuButton">
+      <component id="4051e" class="javax.swing.JButton" binding="MenuButton">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -378,6 +367,17 @@
           <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
+      <component id="786ea" class="javax.swing.JButton" default-binding="true">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-7266521"/>
+          <font name="Arial Black" size="22" style="1"/>
+          <foreground color="-1"/>
+          <text value="Contact Us"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

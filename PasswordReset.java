@@ -3,15 +3,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PasswordReset extends JFrame{
-
-
+public class PasswordReset extends JFrame {
     private JPanel mainPanel;
     private JLabel logoImage;
     private JButton homeButton;
     private JButton menuButton;
     private JButton contactUsButton;
-    private JButton resetButton;
+    private JButton Delivery;
     private JTextField textField1;
     private JTextArea pleaseEnterEmailToTextArea;
 
@@ -25,35 +23,28 @@ public class PasswordReset extends JFrame{
 
         this.pack();
 
-        //Navigation
+
         homeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame mainMenu = new Menu("Main Menu");
-                dispose();
-            }
-        });
-        contactUsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame contactUs = new Contact("Contact Us");
+                JFrame menu = new Menu("Menu");
                 dispose();
             }
         });
         menuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame fullMenu = new FullMenu("Menu");
+                JFrame fullMenu = new FullMenu("Full Menu");
                 dispose();
             }
         });
-        resetButton.addActionListener(new ActionListener() {
+        contactUsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame profile = new Profile("Profile");
+                JFrame contact = new Contact("Contact Us");
                 dispose();
             }
         });
     }
-}
 
+}

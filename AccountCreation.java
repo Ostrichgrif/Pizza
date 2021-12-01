@@ -7,7 +7,7 @@ public class AccountCreation extends JFrame{
     private JLabel logoImage;
     private JButton profileButton;
     private JButton homeButton;
-    private JButton menuButton;
+    private JButton MenuButton;
     private JPanel mainPanel;
     private JTextField nameField;
     private JTextField emailField;
@@ -20,7 +20,6 @@ public class AccountCreation extends JFrame{
     private JTextField addressField;
     private JLabel errorField;
     private JButton saveButton;
-    private JButton contactUsButton;
 
     public AccountCreation(String name) {
         super(name);
@@ -40,36 +39,20 @@ public class AccountCreation extends JFrame{
             }
         });
 
-        //Navigation
         homeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame mainMenu = new Menu("Main Menu");
+                JFrame menu = new Menu("Menu");
                 dispose();
             }
         });
-        contactUsButton.addActionListener(new ActionListener() {
+        MenuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame contactUs = new Contact("Contact Us");
+                JFrame fullMenu = new FullMenu("Full Menu");
                 dispose();
             }
         });
-        menuButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame fullMenu = new FullMenu("Menu");
-                dispose();
-            }
-        });
-        profileButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame profilePage = new Profile("Profile");
-                dispose();
-            }
-        });
-
     }
     public void checkInformation() {
         String tempString;
@@ -87,8 +70,26 @@ public class AccountCreation extends JFrame{
             errorField.setText("Invalid phone number");
         }
 
+        tempPass = passField.getPassword();
+        for (int i=0; i<tempPass.length+1; i++) {
+            if (tempPass[i] != passField2.getPassword()[i]) {
+                errorField.setText("Passwords do not match");
+            }
+        }
+
+        tempString = expField.getText();
+        if (tempString.length()>5 || tempString.length()<5) {
+            errorField.setText("expiration date is incorrect");
+        }
+
+        tempString = cvvfield.getText();
+        if (tempString.length()>3 || tempString.length()<3) {
+            errorField.setText("CVV is incorrect");
+        }
 
     }
+
+
     public void saveInformation() {
 
     }

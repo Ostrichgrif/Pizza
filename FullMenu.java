@@ -6,13 +6,13 @@ import java.awt.event.ActionListener;
 public class FullMenu extends JFrame{
 
     private JPanel mainPanel;
-    private JLabel logoImage;
-    private JButton profileButton;
     private JButton homeButton;
     private JButton menuButton;
     private JButton contactUsButton;
     private JButton sidesButton;
     private JButton pizzaButton;
+    private JLabel logoImage;
+    private JButton profileButton;
     private JButton beveragesButton;
     private JTextArea sizeSMLTextArea;
     private JTextPane breadSticks$4BreadStickBitesTextPane;
@@ -28,42 +28,47 @@ public class FullMenu extends JFrame{
 
         this.pack();
 
-        //Navigation
-        profileButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame profilePage = new Profile("Profile");
-                dispose();
-            }
-        });
-        sidesButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame sidesScreen = new Sides("Sides");
-                dispose();
-            }
-        });
         homeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame mainMenu = new Menu("Main Menu");
+                JFrame menu = new Menu("Menu");
+                dispose();
+            }
+        });
+        menuButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame fullMenu = new FullMenu("Full Menu");
                 dispose();
             }
         });
         contactUsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame contactUs = new Contact("Contact Us");
+                JFrame contact = new Contact("Contact Us");
                 dispose();
             }
         });
         pizzaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame pizzaCreation = new PizzaCreator("Pizza Creator");
+                JFrame pizza = new PizzaCreator("pizza creator");
                 dispose();
             }
         });
+        sidesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame sides = new Sides("Sides");
+                dispose();
+            }
+        });
+
+
+    }
+    public static void main(String[] args)
+    {
+        JFrame fullMenu = new FullMenu("Full menu");
     }
 
 }

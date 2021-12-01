@@ -17,7 +17,6 @@ public class Login extends JFrame{
     private JTextField textField2;
     private JButton forgotPasswordButton;
     private JButton signUpButton;
-    private JButton loginButton;
 
     public Login(String name) {
         super(name);
@@ -32,41 +31,21 @@ public class Login extends JFrame{
         homeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame mainMenu = new Menu("Main Menu");
-                dispose();
-            }
-        });
-        contactUsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame contactUs = new Contact("Contact Us");
+                JFrame menu = new Menu("Menu");
                 dispose();
             }
         });
         menuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame fullMenu = new FullMenu("Menu");
+                JFrame fullMenu = new FullMenu("Full Menu");
                 dispose();
             }
         });
-        profileButton.addActionListener(new ActionListener() {
+        contactUsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame profile = new Profile("Profile");
-                dispose();
-            }
-        });
-        signUpButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame signUp = new AccountCreation("Sign Up");
-            }
-        });
-        loginButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame profile = new Profile("Profile");
+                JFrame contact = new Contact("Contact Us");
                 dispose();
             }
         });

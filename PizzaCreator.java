@@ -84,7 +84,7 @@ public class PizzaCreator extends JFrame {
         profileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame profilePage = new Profile("Profile");
+                JFrame profile = new Profile("Profile");
                 dispose();
             }
         });
@@ -92,27 +92,6 @@ public class PizzaCreator extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame sidesScreen = new Sides("Sides");
-                dispose();
-            }
-        });
-        homeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame mainMenu = new Menu("Main Menu");
-                dispose();
-            }
-        });
-        contactUsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame contactUs = new Contact("Contact Us");
-                dispose();
-            }
-        });
-        menuButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame fullMenu = new FullMenu("Menu");
                 dispose();
             }
         });
@@ -198,13 +177,56 @@ public class PizzaCreator extends JFrame {
         checkOutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               // userPizzaOrder.add(saveOrder(quantity));
+                userPizzaOrder.add(saveOrder(quantity));
 
                 for (int i=0; i<userPizzaOrder.size(); i++) {
                     System.out.println(userPizzaOrder.get(i));
 
                 }
                 JFrame sidesScreen = new Sides("Sides");
+                dispose();
+            }
+        });
+
+        homeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame menu = new Menu("Menu");
+                dispose();
+            }
+        });
+        menuButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame fullMenu = new FullMenu("Full Menu");
+                dispose();
+            }
+        });
+        contactUsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame contact = new Contact("Contact Us");
+                dispose();
+            }
+        });
+        pizzaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame pizza = new PizzaCreator("Pizza menu");
+                dispose();
+            }
+        });
+        sidesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame sides = new Sides("side items");
+                dispose();
+            }
+        });
+        beveragesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame drinks = new Drinks("Beverages");
                 dispose();
             }
         });
@@ -315,9 +337,6 @@ public class PizzaCreator extends JFrame {
             }
             else if (t3RightRButton.isSelected()) {
                 t3 = 3;
-            }
-            else {
-                t3=2;
             }
         }
         if (t4RButton.isSelected()) {

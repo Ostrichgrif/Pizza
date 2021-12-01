@@ -48,41 +48,122 @@ public class Sides extends JFrame{
 
         this.pack();
 
-        //Navigation
-        profileButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame profilePage = new Profile("Profile");
-                dispose();
-            }
-        });
-        pizzaButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame pizzaScreen = new PizzaCreator("Pizza Creator");
-                dispose();
-            }
-        });
         homeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame mainMenu = new Menu("Main Menu");
-                dispose();
-            }
-        });
-        contactUsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame contactUs = new Contact("Contact Us");
+                JFrame menu = new Menu("Menu");
                 dispose();
             }
         });
         menuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame fullMenu = new FullMenu("Menu");
+                JFrame fullMenu = new FullMenu("Full Menu");
                 dispose();
             }
         });
+        contactUsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame contact = new Contact("Contact Us");
+                dispose();
+            }
+        });
+
+        pizzaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame pizza = new PizzaCreator("Pizza menu");
+                dispose();
+            }
+        });
+        sidesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame sides = new Sides("side items");
+                dispose();
+            }
+        });
+        beveragesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame drinks = new Drinks("Beverages");
+                dispose();
+            }
+        });
+        Checkout.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame drinks = new Drinks("Beverages");
+                dispose();
+            }
+        });
+        profileButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame profile = new Profile("Profile");
+                dispose();
+            }
+        });
+
+        final int[] quantityNum = {0};
+        final int[] quantityNum2 = {0};
+        final int[] quantityNum3 = {0};
+
+        this.Quantity1.setText(String.valueOf(quantityNum[0]));
+        this.quantity2.setText(String.valueOf(quantityNum[0]));
+        this.quantity3.setText(String.valueOf(quantityNum[0]));
+        this.minusquantity1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                quantityNum[0] = quantityNum[0] -1;
+                if (quantityNum[0]<0) {
+                    quantityNum[0] = 0;
+                }
+                Quantity1.setText(String.valueOf(quantityNum[0]));
+            }
+        });
+        this.plusquantity1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                quantityNum[0] = quantityNum[0] +1;
+                Quantity1.setText(String.valueOf(quantityNum[0]));
+            }
+        });
+        this.minusquantity2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                quantityNum2[0] = quantityNum2[0] -1;
+                if (quantityNum2[0]<0) {
+                    quantityNum2[0] = 0;
+                }
+                quantity2.setText(String.valueOf(quantityNum2[0]));
+            }
+        });
+        this.plusquantity2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                quantityNum2[0] = quantityNum2[0] +1;
+                quantity2.setText(String.valueOf(quantityNum2[0]));
+            }
+        });
+        this.minusquantity3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                quantityNum3[0] = quantityNum3[0] -1;
+                if (quantityNum3[0]<0) {
+                    quantityNum3[0] = 0;
+                }
+                quantity3.setText(String.valueOf(quantityNum3[0]));
+            }
+        });
+        this.plusquantity3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                quantityNum3[0] = quantityNum3[0] +1;
+                quantity3.setText(String.valueOf(quantityNum3[0]));
+            }
+        });
+    }
+    public static void main(String[] args)
+    {
+        JFrame sides = new Sides("side items");
     }
 }
