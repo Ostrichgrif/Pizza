@@ -63,6 +63,20 @@ public class FullMenu extends JFrame{
                 dispose();
             }
         });
+        profileButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame profile = new Profile("Profile");
+                dispose();
+            }
+        });
+        beveragesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame beverage = new Drinks("Beverages");
+                dispose();
+            }
+        });
 
 
     }

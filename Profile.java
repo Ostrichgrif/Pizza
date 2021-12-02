@@ -52,5 +52,12 @@ public class Profile extends JFrame {
                 dispose();
             }
         });
+        editProfileButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame profileEdit = new PersonalInfo("Edit Profile");
+                dispose();
+            }
+        });
     }
 }

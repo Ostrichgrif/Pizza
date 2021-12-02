@@ -44,7 +44,21 @@ public class Drinks extends JFrame {
     private JButton d5AddButton;
     private JButton d6AddButton;
     private JButton d7AddButton;
+    private JComboBox d1Size;
+    private JComboBox d2Size;
+    private JComboBox d3Size;
+    private JComboBox d4Size;
+    private JComboBox d5Size;
+    private JComboBox d6Size;
+    private JComboBox d7Size;
 
+    final int[] quantity1 = {0};
+    final int[] quantity2 = {0};
+    final int[] quantity3 = {0};
+    final int[] quantity4 = {0};
+    final int[] quantity5 = {0};
+    final int[] quantity6 = {0};
+    final int[] quantity7 = {0};
 
 
     public Drinks(String name) {
@@ -290,9 +304,9 @@ public class Drinks extends JFrame {
                 dispose();
             }
         });
+        checkOutButton.addActionListener();
 
         //Quantity Buttons
-        final int[] quantity1 = {0};
         this.qTextField.setText(String.valueOf(quantity1[0]));
         this.d1MinusButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -311,7 +325,6 @@ public class Drinks extends JFrame {
             }
         });
         //Drink 2
-        final int[] quantity2 = {0};
         this.qTextField2.setText(String.valueOf(quantity2[0]));
         this.d2MinusButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -330,7 +343,6 @@ public class Drinks extends JFrame {
             }
         });
         //Drink 3
-        final int[] quantity3 = {0};
         this.qTextField3.setText(String.valueOf(quantity3[0]));
         this.d3MinusButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -349,7 +361,6 @@ public class Drinks extends JFrame {
             }
         });
         //Drink 4
-        final int[] quantity4 = {0};
         this.qTextField4.setText(String.valueOf(quantity4[0]));
         this.d4MinusButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -368,7 +379,6 @@ public class Drinks extends JFrame {
             }
         });
         //Drink 5
-        final int[] quantity5 = {0};
         this.qTextField5.setText(String.valueOf(quantity5[0]));
         this.d5MinusButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -387,7 +397,6 @@ public class Drinks extends JFrame {
             }
         });
         //Drink 6
-        final int[] quantity6 = {0};
         this.qTextField6.setText(String.valueOf(quantity6[0]));
         this.d6MinusButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -406,7 +415,6 @@ public class Drinks extends JFrame {
             }
         });
         //Drink 7
-        final int[] quantity7 = {0};
         this.qTextField7.setText(String.valueOf(quantity7[0]));
         this.d7MinusButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -424,6 +432,27 @@ public class Drinks extends JFrame {
                 qTextField7.setText(String.valueOf(quantity7[0]));
             }
         });
+
+    }
+
+    public Drink saveOrder() {
+        int drink1 = quantity1[0];
+        int drink2 = quantity2[0];
+        int drink3 = quantity3[0];
+        int drink4 = quantity4[0];
+        int drink5 = quantity5[0];
+        int drink6 = quantity6[0];
+        int drink7 = quantity7[0];
+
+        int d1Siz = d1Size.getSelectedIndex();
+        int d2Siz = d2Size.getSelectedIndex();
+        int d3Siz = d3Size.getSelectedIndex();
+        int d4Siz = d4Size.getSelectedIndex();
+        int d5Siz = d5Size.getSelectedIndex();
+        int d6Siz = d6Size.getSelectedIndex();
+        int d7Siz = d7Size.getSelectedIndex();
+
+        return new Drink(drink1, drink2, drink3, drink4, drink5, drink6, drink7, d1Siz, d2Siz, d3Siz, d4Siz, d5Siz, d6Siz, d7Siz);
 
     }
 }
