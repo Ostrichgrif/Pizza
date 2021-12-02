@@ -34,8 +34,80 @@ public class Drink {
     }
 
     public String toString() {
-        return "Pepsi: " + drink1 + drink1Size + " Diet Pepsi: " + drink2 + drink2Size + " Pepsi Crush Orange: " +
-                drink3 + drink3Size + " Pepsi Crush Diet Orange: " + drink4 + drink4Size + " Sierra Mist: " + drink5 + drink5Size +
-                " Diet Sierra Mist: " + drink6 + drink6Size + " Lemonade: " + drink7 + drink7Size;
+        String s1="";
+        String s2="";
+        String s3="";
+        String s4="";
+        String s5="";
+        String s6="";
+        String s7="";
+
+        char temp = ' ';
+
+
+        if (drink1>0) {
+           switch(drink1Size) {
+               case 1: temp = 'S';
+               case 2: temp = 'M';
+               case 3: temp = 'L';
+            }
+            s1 = "Pepsi: " + drink1 + " Size: " + temp + "\n";
+        }
+
+        if (drink2>0) {
+            switch(drink2Size) {
+                case 1: temp = 'S';
+                case 2: temp = 'M';
+                case 3: temp = 'L';
+            }
+            s2 = "Pepsi: " + drink2 + " Size: " + temp + "\n";
+        }
+
+        if (drink3>0) {
+            switch(drink3Size) {
+                case 1: temp = 'S';
+                case 2: temp = 'M';
+                case 3: temp = 'L';
+            }
+            s3 = "Pepsi: " + drink3 + " Size: " + temp + "\n";
+        }
+
+        if (drink4>0) {
+            switch(drink4Size) {
+                case 1: temp = 'S';
+                case 2: temp = 'M';
+                case 3: temp = 'L';
+            }
+            s4 = "Pepsi: " + drink4 + " Size: " + temp + "\n";
+        }
+
+        if (drink5>0) {
+            switch(drink5Size) {
+                case 1: temp = 'S';
+                case 2: temp = 'M';
+                case 3: temp = 'L';
+            }
+            s5 = "Pepsi: " + drink5 + " Size: " + temp + "\n";
+        }
+
+        if (drink6>0) {
+            switch(drink6Size) {
+                case 1: temp = 'S';
+                case 2: temp = 'M';
+                case 3: temp = 'L';
+            }
+            s6 = "Pepsi: " + drink6 + " Size: " + temp + "\n";
+        }
+
+        if (drink7>0) {
+            switch(drink7Size) {
+                case 1: temp = 'S';
+                case 2: temp = 'M';
+                case 3: temp = 'L';
+            }
+            s7 = "Pepsi: " + drink7 + " Size: " + temp + "\n";
+        }
+
+        return s1 + s2 + s3 + s4 + s5 + s6 + s7;
     }
 }

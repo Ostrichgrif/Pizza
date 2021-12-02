@@ -10,7 +10,6 @@ public class Myorder extends JFrame{
     private JButton homeButton;
     private JButton menuButton;
     private JButton contactUsButton;
-    private JButton editProfileButton;
     private JTextArea pizzaOrder;
     private JButton continueToCheckoutButton;
     private JTextArea sidesOrder;
@@ -27,6 +26,10 @@ public class Myorder extends JFrame{
         this.setMinimumSize(new Dimension(1080, 720));
 
         this.pack();
+
+        setPizzaText(p);
+        setSideText(s);
+        setDrinkText(d);
 
         homeButton.addActionListener(new ActionListener() {
             @Override
@@ -56,5 +59,14 @@ public class Myorder extends JFrame{
                 dispose();
             }
         });
+    }
+    public void setPizzaText(Pizza p) {
+        pizzaOrder.setText(p.toString());
+    }
+    public void setSideText(Side s) {
+        sidesOrder.setText(s.toString());
+    }
+    public void setDrinkText(Drink d) {
+        drinkOrder.setText(d.toString());
     }
 }

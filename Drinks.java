@@ -304,7 +304,14 @@ public class Drinks extends JFrame {
                 dispose();
             }
         });
-        checkOutButton.addActionListener();
+        checkOutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Drink dInput = saveOrder();
+                JFrame orderScreen = new Myorder("Shopping Cart", pInput, sInput, dInput);
+                dispose();
+            }
+        });
 
         //Quantity Buttons
         this.qTextField.setText(String.valueOf(quantity1[0]));
