@@ -68,8 +68,6 @@ public class PizzaCreator extends JFrame {
     private JRadioButton t5RightRButton;
     private JRadioButton t6RightRButton;
 
-    static ArrayList<Pizza> userPizzaOrder = new ArrayList<Pizza>();
-
     public PizzaCreator(String name) {
         super(name);
 
@@ -80,21 +78,7 @@ public class PizzaCreator extends JFrame {
 
         this.pack();
 
-        //Navigation
-        profileButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame profile = new Profile("Profile");
-                dispose();
-            }
-        });
-        sidesButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame sidesScreen = new Sides("Sides");
-                dispose();
-            }
-        });
+
 
         //makes quantity text field and buttons work
         final int[] quantity = {1};
@@ -171,23 +155,16 @@ public class PizzaCreator extends JFrame {
         t6Group.add(t6WholeRButton);
         t6Group.add(t6RightRButton);
 
-
-
-
         checkOutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                userPizzaOrder.add(saveOrder(quantity));
+                Pizza userPizzaOrder= saveOrder(quantity);
+                JFrame sides = new Sides("Sides", userPizzaOrder);
 
-                for (int i=0; i<userPizzaOrder.size(); i++) {
-                    System.out.println(userPizzaOrder.get(i));
-
-                }
-                JFrame sidesScreen = new Sides("Sides");
                 dispose();
             }
         });
-
+        //Navigation
         homeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -227,6 +204,13 @@ public class PizzaCreator extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame drinks = new Drinks("Beverages");
+                dispose();
+            }
+        });
+        profileButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame profile = new Profile("Profile");
                 dispose();
             }
         });
@@ -283,6 +267,9 @@ public class PizzaCreator extends JFrame {
             else if (m1RightRButton.isSelected()) {
                 m1 = 3;
             }
+            else {
+                m1 = 2;
+            }
         }
         if (m2RButton.isSelected()) {
             if (m2LeftRButton.isSelected()) {
@@ -293,6 +280,9 @@ public class PizzaCreator extends JFrame {
             }
             else if (m2RightRButton.isSelected()) {
                 m2 = 3;
+            }
+            else {
+                m2 = 2;
             }
         }
         if (m3RButton.isSelected()) {
@@ -305,6 +295,9 @@ public class PizzaCreator extends JFrame {
             else if (m3RightRButton.isSelected()) {
                 m3 = 3;
             }
+            else {
+                m3 = 2;
+            }
         }
         if (t1RButton.isSelected()) {
             if (t1LeftRButton.isSelected()) {
@@ -315,6 +308,9 @@ public class PizzaCreator extends JFrame {
             }
             else if (t1RightRButton.isSelected()) {
                 t1 = 3;
+            }
+            else {
+                t1 = 2;
             }
         }
         if (t2RButton.isSelected()) {
@@ -327,6 +323,9 @@ public class PizzaCreator extends JFrame {
             else if (t2RightRButton.isSelected()) {
                 t2 = 3;
             }
+            else {
+                t2 = 2;
+            }
         }
         if (t3RButton.isSelected()) {
             if (t3LeftRButton.isSelected()) {
@@ -337,6 +336,9 @@ public class PizzaCreator extends JFrame {
             }
             else if (t3RightRButton.isSelected()) {
                 t3 = 3;
+            }
+            else {
+                t3 = 2;
             }
         }
         if (t4RButton.isSelected()) {
@@ -349,6 +351,9 @@ public class PizzaCreator extends JFrame {
             else if (t4RightRButton.isSelected()) {
                 t4 = 3;
             }
+            else {
+                t4 = 2;
+            }
         }
         if (t5RButton.isSelected()) {
             if (t5LeftRButton.isSelected()) {
@@ -359,6 +364,9 @@ public class PizzaCreator extends JFrame {
             }
             else if (t5RightRButton.isSelected()) {
                 t5 = 3;
+            }
+            else {
+                t5 = 2;
             }
         }
         if (t6RButton.isSelected()) {
@@ -371,19 +379,19 @@ public class PizzaCreator extends JFrame {
             else if (t6RightRButton.isSelected()) {
                 t6 = 3;
             }
+            else {
+                t6 = 2;
+            }
         }
 
         return new Pizza(size, crust, m1,m2,m3,t1,t2,t3,t4,t5,t6,n);
     }
 
 
+
     public static void main(String[] args) {
 
         JFrame pizzaCreator = new PizzaCreator("Pizza Creation");
-
-
-
-
 
     }
 
