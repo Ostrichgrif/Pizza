@@ -3,19 +3,20 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class FullMenu extends JFrame{
-
+public class orderReviewDeliver extends JFrame{
     private JPanel mainPanel;
+    private JLabel logoImage;
+    private JButton profileButton;
     private JButton homeButton;
     private JButton menuButton;
     private JButton contactUsButton;
-    private JButton sidesButton;
-    private JButton pizzaButton;
-    private JLabel logoImage;
-    private JButton profileButton;
-    private JButton beveragesButton;
+    private JTextArea pizzaOrder;
+    private JButton placeYourOrderButton;
+    private JTextArea sidesOrder;
+    private JTextArea textArea1;
+    private JTextArea textArea2;
 
-    public FullMenu(String name) {
+    public orderReviewDeliver(String name) {
         super(name);
 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -46,40 +47,12 @@ public class FullMenu extends JFrame{
                 dispose();
             }
         });
-        pizzaButton.addActionListener(new ActionListener() {
+        placeYourOrderButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame pizza = new PizzaCreator("pizza creator");
+                JFrame placeOrder = new OrdercomDelivery("delivery");
                 dispose();
             }
         });
-        sidesButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame sides = new Sides("Sides");
-                dispose();
-            }
-        });
-        profileButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame profile = new Profile("Profile");
-                dispose();
-            }
-        });
-        beveragesButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame beverage = new Drinks("Beverages");
-                dispose();
-            }
-        });
-
-
     }
-    public static void main(String[] args)
-    {
-        JFrame fullMenu = new FullMenu("Full menu");
-    }
-
 }

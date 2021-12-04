@@ -17,6 +17,7 @@ public class Login extends JFrame{
     private JTextField textField2;
     private JButton forgotPasswordButton;
     private JButton signUpButton;
+    private JButton Login;
 
     public Login(String name) {
         super(name);
@@ -46,6 +47,27 @@ public class Login extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame contact = new Contact("Contact Us");
+                dispose();
+            }
+        });
+        forgotPasswordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame pass = new PasswordReset("password");
+                dispose();
+            }
+        });
+        signUpButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame profile = new AccountCreation("account");
+                dispose();
+            }
+        });
+        Login.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame profile = new Profile("profile");
                 dispose();
             }
         });

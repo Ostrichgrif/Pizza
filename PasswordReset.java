@@ -9,7 +9,7 @@ public class PasswordReset extends JFrame {
     private JButton homeButton;
     private JButton menuButton;
     private JButton contactUsButton;
-    private JButton Delivery;
+    private JButton reset;
     private JTextField textField1;
     private JTextArea pleaseEnterEmailToTextArea;
 
@@ -42,6 +42,13 @@ public class PasswordReset extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame contact = new Contact("Contact Us");
+                dispose();
+            }
+        });
+        reset.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame reset = new Thanksreset("thanks");
                 dispose();
             }
         });

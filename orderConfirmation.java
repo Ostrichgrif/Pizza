@@ -23,6 +23,12 @@ public class orderConfirmation extends JFrame {
 
         this.pack();
 
+        double max = 999999999;
+        double min = 100000000;
+        double randomNum = Math.random()*(max-min+1)+min;
+        String orderNum = "".valueOf(randomNum);
+        orderNumber.setText(orderNum);
+
         homeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -41,6 +47,13 @@ public class orderConfirmation extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame contact = new Contact("Contact Us");
+                dispose();
+            }
+        });
+        profileButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame profile = new Profile("Profile");
                 dispose();
             }
         });

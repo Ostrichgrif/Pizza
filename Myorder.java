@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.Math;
 
 public class Myorder extends JFrame{
     private JPanel mainPanel;
@@ -16,6 +17,7 @@ public class Myorder extends JFrame{
     private JTextArea drinkOrder;
     private JTextArea textArea1;
     private JTextArea textArea2;
+    private JTextArea preTaxTotal;
 
     public Myorder(String name, Pizza p, Side s, Drink d) {
         super(name);
@@ -30,6 +32,20 @@ public class Myorder extends JFrame{
         setPizzaText(p);
         setSideText(s);
         setDrinkText(d);
+
+        int max = 20;
+        int min = 10;
+        double randomNum = Math.random()*(max-min+1)+min;
+        String preTax = "".valueOf(String.format("%.2f",randomNum));
+        preTaxTotal.setText(preTax);
+
+        double tax = randomNum*.06;
+        String taxString = "".valueOf(String.format("%.2f",tax));
+        textArea1.setText(taxString);
+
+        double postTax = randomNum + tax;
+        String postTaxString = "".valueOf(String.format("%.2f",postTax));
+        textArea2.setText(postTaxString);
 
         homeButton.addActionListener(new ActionListener() {
             @Override
@@ -59,7 +75,14 @@ public class Myorder extends JFrame{
                 dispose();
             }
         });
+        continueToCheckoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame pickup = new pdOption("Pick up Options");
+            }
+        });
     }
+
     public void setPizzaText(Pizza p) {
         pizzaOrder.setText(p.toString());
     }
@@ -69,4 +92,7 @@ public class Myorder extends JFrame{
     public void setDrinkText(Drink d) {
         drinkOrder.setText(d.toString());
     }
+
+
+
 }

@@ -46,66 +46,38 @@ public class Drink {
 
 
         if (drink1>0) {
-           switch(drink1Size) {
-               case 1: temp = 'S';
-               case 2: temp = 'M';
-               case 3: temp = 'L';
-            }
-            s1 = "Pepsi: " + drink1 + " Size: " + temp + "\n";
+
+            s1 = "Pepsi: " + drink1 + "\n";
         }
 
         if (drink2>0) {
-            switch(drink2Size) {
-                case 1: temp = 'S';
-                case 2: temp = 'M';
-                case 3: temp = 'L';
-            }
-            s2 = "Pepsi: " + drink2 + " Size: " + temp + "\n";
+
+            s2 = "Diet Pepsi: " + drink2 + "\n";
         }
 
         if (drink3>0) {
-            switch(drink3Size) {
-                case 1: temp = 'S';
-                case 2: temp = 'M';
-                case 3: temp = 'L';
-            }
-            s3 = "Pepsi: " + drink3 + " Size: " + temp + "\n";
+
+            s3 = "Pepsi Crush Orange: " + drink3 + "\n";
         }
 
         if (drink4>0) {
-            switch(drink4Size) {
-                case 1: temp = 'S';
-                case 2: temp = 'M';
-                case 3: temp = 'L';
-            }
-            s4 = "Pepsi: " + drink4 + " Size: " + temp + "\n";
+
+            s4 = "Pepsi Crush Diet Orange: " + drink4 + "\n";
         }
 
         if (drink5>0) {
-            switch(drink5Size) {
-                case 1: temp = 'S';
-                case 2: temp = 'M';
-                case 3: temp = 'L';
-            }
-            s5 = "Pepsi: " + drink5 + " Size: " + temp + "\n";
+
+            s5 = "Sierra Mist: " + drink5 + "\n";
         }
 
         if (drink6>0) {
-            switch(drink6Size) {
-                case 1: temp = 'S';
-                case 2: temp = 'M';
-                case 3: temp = 'L';
-            }
-            s6 = "Pepsi: " + drink6 + " Size: " + temp + "\n";
+
+            s6 = "Diet Sierra Mist: " + drink6 + "\n";
         }
 
         if (drink7>0) {
-            switch(drink7Size) {
-                case 1: temp = 'S';
-                case 2: temp = 'M';
-                case 3: temp = 'L';
-            }
-            s7 = "Pepsi: " + drink7 + " Size: " + temp + "\n";
+
+            s7 = "Lemonade : " + drink7 + "\n";
         }
 
         return s1 + s2 + s3 + s4 + s5 + s6 + s7;
